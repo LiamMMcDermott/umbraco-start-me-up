@@ -127,9 +127,9 @@ PublishScripts/
 # NuGet Packages
 *.nupkg
 # The packages folder can be ignored because of Package Restore
-**/packages/*
+*/packages/*
 # except build/, which is used as an MSBuild target.
-!**/packages/build/
+!*/packages/build/
 # Uncomment if necessary however generally it will be regenerated when needed
 #!**/packages/repositories.config
 # NuGet v3's project.json files produces more ignoreable files
@@ -234,11 +234,14 @@ paket-files/
 # Ignore Umbraco content cache file
 **/App_Data/umbraco.config
 
+#ignore Models in App_data
+**/App_Data/Models/*
+
 # Don't ignore Umbraco packages (VisualStudio.gitignore mistakes this for a NuGet packages folder)
 # Make sure to include details from VisualStudio.gitignore BEFORE this
 !**/App_Data/[Pp]ackages/
 !**/[Uu]mbraco/[Dd]eveloper/[Pp]ackages
-!*/*/App_Data/[Pp]ackages/
+!**/App_Data/[Pp]ackages/
 
 # ImageProcessor DiskCache 
 **/App_Data/cache/
