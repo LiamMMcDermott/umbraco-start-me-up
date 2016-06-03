@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<umbPackage>
+  <files>
+    <file>
+      <guid>RB.KeyValueEditor.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>RB.KeyValueEditor.dll</orgName>
+    </file>
+    <file>
+      <guid>KeyValueEditorController.js</guid>
+      <orgPath>/App_Plugins/KeyValueEditor</orgPath>
+      <orgName>KeyValueEditorController.js</orgName>
+    </file>
+    <file>
+      <guid>KeyValueEditorDialogController.js</guid>
+      <orgPath>/App_Plugins/KeyValueEditor</orgPath>
+      <orgName>KeyValueEditorDialogController.js</orgName>
+    </file>
+    <file>
+      <guid>KeyValueEditor.css</guid>
+      <orgPath>/App_Plugins/KeyValueEditor</orgPath>
+      <orgName>KeyValueEditor.css</orgName>
+    </file>
+    <file>
+      <guid>KeyValueEditorDialogView.html</guid>
+      <orgPath>/App_Plugins/KeyValueEditor</orgPath>
+      <orgName>KeyValueEditorDialogView.html</orgName>
+    </file>
+    <file>
+      <guid>KeyValueEditorView.html</guid>
+      <orgPath>/App_Plugins/KeyValueEditor</orgPath>
+      <orgName>KeyValueEditorView.html</orgName>
+    </file>
+    <file>
+      <guid>Package.manifest</guid>
+      <orgPath>/App_Plugins/KeyValueEditor</orgPath>
+      <orgName>Package.manifest</orgName>
+    </file>
+  </files>
+  <info>
+    <package>
+      <name>RB: Key Value Editor</name>
+      <version>1.0.0</version>
+      <license url="http://opensource.org/licenses/MIT">MIT License</license>
+      <url>http://rb.com/</url>
+      <requirements>
+        <major>7</major>
+        <minor>0</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>RB</name>
+      <website>http://rb.com/</website>
+    </author>
+    <readme><![CDATA[# RB: Key Value Editor
+
+The Key Value Editor package allows editors to create key value pair lists within instances of their document types. The editor can add, edit and delete pairs. The current version of this package is only compatible with version 7 of Umbraco.
+
+## Set Up
+
+Create a new data type using the RB.KeyValueEditor property editor. Add a new property to a document type using the new data type you have just created. Once you have created your new property, you should be able to add a list of key value pairs on any instances of your document type where the new data type exists.
+
+## Converter
+
+When using a property value on a template, add the following code to create a strongly type version of the key value editor property value.
+
+    @{
+        Dictionary<string, string> keyValuePairs = CurrentPage.GetPropertyValue<Dictionary<string, string>>("alias");
+    }
+	
+Once converted, you will be able to choose single items and loop through each. For example:
+
+    @{
+        // Find a single key value pair based on key
+        var single = keyValuePairs.SingleOrDefault(k => k.Key.Equals("local"));
+    
+        // Loop through each pair
+        foreach (var pair in keyValuePairs)
+        {
+            @pair.Key;
+            @pair.Value;
+        }
+    }
+
+## Contributing
+
+To raise a new bug, create an [issue](https://bitbucket.org/rbdigital/umbraco-keyvalue-editor/issues) on the Bitbucket repository. To fix a bug or add new features or providers, fork the repository and send a [pull request](https://bitbucket.org/rbdigital/umbraco-keyvalue-editor/pull-requests) with your changes. Feel free to add ideas to the repository's [issues](https://bitbucket.org/rbdigital/umbraco-keyvalue-editor/issues) list if you would to discuss anything related to the package.
+
+## Publishing
+
+Remember to include all necessary files within the package.xml file. Run the following script, entering the new version number when prompted to created a published version of the package:
+
+    Build\Release.bat
+
+The release script will amend all assembly versions for the package, build the solution and create the package file. The script will also commit and tag the repository accordingly to reflect the new version.]]></readme>
+  </info>
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes />
+</umbPackage>

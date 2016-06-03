@@ -108,6 +108,10 @@
       <HintPath>..\packages\Markdown.1.14.4\lib\net45\MarkdownSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MarkEmbling.PostcodesIO, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarkEmbling.PostcodesIO.0.0.1.0\lib\net40\MarkEmbling.PostcodesIO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.ApplicationBlocks.Data, Version=1.0.1559.20655, Culture=neutral">
       <HintPath>..\packages\UmbracoCms.Core.7.4.3\lib\Microsoft.ApplicationBlocks.Data.dll</HintPath>
       <Private>True</Private>
@@ -167,6 +171,10 @@
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.1.0\lib\net451\RestSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Semver, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
@@ -292,8 +300,107 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\fanoe.css" />
+    <Content Include="css\rte.css" />
+    <Content Include="css\style.css" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery.min.js" />
     <Content Include="packages.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
+    <Content Include="scripts\fanoe.js" />
+    <Content Include="scripts\Geo.js" />
+    <Content Include="Umbraco\Config\Create\UI.xml" />
+    <Content Include="Umbraco\Config\Lang\cs.xml" />
+    <Content Include="Umbraco\Config\Lang\da.xml" />
+    <Content Include="Umbraco\Config\Lang\de.xml" />
+    <Content Include="Umbraco\Config\Lang\en.xml" />
+    <Content Include="Umbraco\Config\Lang\en_us.xml" />
+    <Content Include="Umbraco\Config\Lang\es.xml" />
+    <Content Include="Umbraco\Config\Lang\fr.xml" />
+    <Content Include="Umbraco\Config\Lang\he.xml" />
+    <Content Include="Umbraco\Config\Lang\it.xml" />
+    <Content Include="Umbraco\Config\Lang\ja.xml" />
+    <Content Include="Umbraco\Config\Lang\ko.xml" />
+    <Content Include="Umbraco\Config\Lang\nb.xml" />
+    <Content Include="Umbraco\Config\Lang\nl.xml" />
+    <Content Include="Umbraco\Config\Lang\pl.xml" />
+    <Content Include="Umbraco\Config\Lang\pt.xml" />
+    <Content Include="Umbraco\Config\Lang\ru.xml" />
+    <Content Include="Umbraco\Config\Lang\sv.xml" />
+    <Content Include="Umbraco\Config\Lang\zh.xml" />
+    <Content Include="Umbraco\Js\app.js" />
+    <Content Include="Umbraco\Js\canvasdesigner.config.js" />
+    <Content Include="Umbraco\Js\canvasdesigner.front.js" />
+    <Content Include="Umbraco\Js\canvasdesigner.loader.js" />
+    <Content Include="Umbraco\Js\canvasdesigner.palettes.js" />
+    <Content Include="Umbraco\Js\canvasdesigner.panel.js" />
+    <Content Include="Umbraco\Js\dualSelectBox.js" />
+    <Content Include="Umbraco\Js\guiFunctions.js" />
+    <Content Include="Umbraco\Js\init.js" />
+    <Content Include="Umbraco\Js\install.loader.js" />
+    <Content Include="Umbraco\Js\language.aspx" />
+    <Content Include="Umbraco\Js\routes.js" />
+    <Content Include="Umbraco\Js\umbraco.controllers.js" />
+    <Content Include="Umbraco\Js\umbraco.directives.js" />
+    <Content Include="Umbraco\Js\umbraco.filters.js" />
+    <Content Include="Umbraco\Js\umbraco.httpbackend.js" />
+    <Content Include="Umbraco\Js\umbraco.installer.js" />
+    <Content Include="Umbraco\Js\umbraco.resources.js" />
+    <Content Include="Umbraco\Js\umbraco.security.js" />
+    <Content Include="Umbraco\Js\umbraco.servervariables.js" />
+    <Content Include="Umbraco\Js\umbraco.services.js" />
+    <Content Include="Umbraco\Js\umbraco.testing.js" />
+    <Content Include="Umbraco\Js\umbracoCheckKeys.js" />
+    <Content Include="Umbraco\Js\UmbracoSpeechBubble.js" />
+    <Content Include="Umbraco\Js\UmbracoSpeechBubbleBackEnd.js" />
+    <Content Include="Umbraco\Js\UmbracoSpeechBubbleInit.js" />
+    <Content Include="Umbraco\Js\umbracoUpgradeChecker.js" />
+    <Content Include="Umbraco\Js\xmlextras.js" />
+    <Content Include="Umbraco\Js\xmlRequest.js" />
+    <Content Include="Umbraco\Views\common\dashboard.html" />
+    <Content Include="Umbraco\Views\common\dialogs\approvedcolorpicker.html" />
+    <Content Include="Umbraco\Views\common\dialogs\content\edit.html" />
+    <Content Include="Umbraco\Views\common\dialogs\help.html" />
+    <Content Include="Umbraco\Views\common\dialogs\iconpicker.html" />
+    <Content Include="Umbraco\Views\common\dialogs\insertmacro.html" />
+    <Content Include="Umbraco\Views\common\dialogs\legacydelete.html" />
+    <Content Include="Umbraco\Views\common\dialogs\linkpicker.html" />
+    <Content Include="Umbraco\Views\common\dialogs\login.html" />
+    <Content Include="Umbraco\Views\common\dialogs\macropicker.html" />
+    <Content Include="Umbraco\Views\common\dialogs\mediapicker.html" />
+    <Content Include="Umbraco\Views\common\dialogs\membergrouppicker.html" />
+    <Content Include="Umbraco\Views\common\dialogs\property.html" />
+    <Content Include="Umbraco\Views\common\dialogs\rteembed.html" />
+    <Content Include="Umbraco\Views\common\dialogs\template\querybuilder.html" />
+    <Content Include="Umbraco\Views\common\dialogs\template\snippet.html" />
+    <Content Include="Umbraco\Views\common\dialogs\treepicker.html" />
+    <Content Include="Umbraco\Views\common\dialogs\user.html" />
+    <Content Include="Umbraco\Views\common\dialogs\ysod.html" />
+    <Content Include="Umbraco\Views\common\legacy.html" />
+    <Content Include="Umbraco\Views\common\login.html" />
+    <Content Include="Umbraco\Views\common\notifications\confirmroutechange.html" />
+    <Content Include="Umbraco\Views\common\overlays\contentpicker\contentpicker.html" />
+    <Content Include="Umbraco\Views\common\overlays\contenttypeeditor\compositions\compositions.html" />
+    <Content Include="Umbraco\Views\common\overlays\contenttypeeditor\editorpicker\editorpicker.html" />
+    <Content Include="Umbraco\Views\common\overlays\contenttypeeditor\editorsettings\editorsettings.html" />
+    <Content Include="Umbraco\Views\common\overlays\contenttypeeditor\propertysettings\propertysettings.html" />
+    <Content Include="Umbraco\Views\common\overlays\copy\copy.html" />
+    <Content Include="Umbraco\Views\common\overlays\embed\embed.html" />
+    <Content Include="Umbraco\Views\common\overlays\help\help.html" />
+    <Content Include="Umbraco\Views\common\overlays\iconpicker\iconpicker.html" />
+    <Content Include="Umbraco\Views\common\overlays\itempicker\itempicker.html" />
+    <Content Include="Umbraco\Views\common\overlays\linkpicker\linkpicker.html" />
+    <Content Include="Umbraco\Views\common\overlays\macropicker\macropicker.html" />
+    <Content Include="Umbraco\Views\common\overlays\mediaPicker\mediapicker.html" />
+    <Content Include="Umbraco\Views\common\overlays\membergrouppicker\membergrouppicker.html" />
+    <Content Include="Umbraco\Views\common\overlays\memberpicker\memberpicker.html" />
+    <Content Include="Umbraco\Views\common\overlays\move\move.html" />
+    <Content Include="Umbraco\Views\common\overlays\treepicker\treepicker.html" />
+    <Content Include="Umbraco\Views\common\overlays\user\user.html" />
+    <Content Include="Umbraco\Views\common\overlays\ysod\ysod.html" />
+    <Content Include="Umbraco\Views\dashboard\settings\settingsdashboardintro.html" />
+    <Content Include="Umbraco\Views\dashboard\settings\settingsdashboardvideos.html" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
@@ -320,6 +427,12 @@
     <Content Include="Config\BaseRestExtensions.config" />
     <Content Include="Config\applications.config" />
     <Content Include="Config\404handlers.config" />
+    <Content Include="Views\BlogOverview.cshtml" />
+    <Content Include="Views\BlogPost.cshtml" />
+    <Content Include="Views\Home.cshtml" />
+    <Content Include="Views\Master.cshtml" />
+    <Content Include="Views\TextPage.cshtml" />
+    <Content Include="Views\TestingJson.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -355,7 +468,15 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\CustomEventHandler.cs" />
+    <Content Include="App_Code\LocationsController.cs" />
+    <Content Include="App_Code\Location.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Default\" />
+    <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

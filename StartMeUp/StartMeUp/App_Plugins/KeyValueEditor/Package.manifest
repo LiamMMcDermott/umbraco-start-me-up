@@ -1,0 +1,19 @@
+﻿{
+  "propertyEditors": [
+    {
+      "name": "Key Value Editor",
+      "alias": "RB.KeyValueEditor",
+      "editor": {
+        "view": "~/App_Plugins/KeyValueEditor/KeyValueEditorView.html",
+        "valueType": "JSON"
+      }
+	}
+  ],
+  "css": [
+    "~/App_Plugins/KeyValueEditor/KeyValueEditor.css"
+  ],
+  "javascript": [
+    "~/App_Plugins/KeyValueEditor/KeyValueEditorController.js",
+    "~/App_Plugins/KeyValueEditor/KeyValueEditorDialogController.js"
+  ]
+}

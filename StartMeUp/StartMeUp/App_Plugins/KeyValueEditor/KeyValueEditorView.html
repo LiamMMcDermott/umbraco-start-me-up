@@ -1,0 +1,23 @@
+﻿<div ng-controller="KeyValueEditorController" class="key-value-editor">
+    <ng-form name="contentPickerForm">
+        <ul class="unstyled">
+            <li ng-repeat="item in model.value">
+                <i class="icon icon-edit blue"></i>
+                <a href="#" prevent-default="" ng-click="editKeyValue(item)">
+                    <localize key="general_edit" class="ng-isolate-scope ng-scope">Edit</localize></a>
+                <i class="icon icon-delete red"></i>
+                <a href="#" prevent-default="" ng-click="deleteKeyValue(item)">
+                    <localize key="general_delete" class="ng-isolate-scope ng-scope">Delete</localize></a>
+                <input type="text" disabled="disabled" ng-model="item.key" />
+                <input type="text" disabled="disabled" ng-model="item.value" />
+            </li>
+        </ul>
+        <ul class="unstyled">
+            <li>
+                <i class="icon icon-add blue"></i>
+                <a href="#" ng-click="addKeyValue()" prevent-default="">
+                    <localize key="general_add" class="ng-isolate-scope ng-scope">Add</localize></a>
+            </li>
+        </ul>
+    </ng-form>
+</div>

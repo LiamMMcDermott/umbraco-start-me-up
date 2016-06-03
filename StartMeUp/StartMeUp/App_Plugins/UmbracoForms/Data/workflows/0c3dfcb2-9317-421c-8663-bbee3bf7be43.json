@@ -1,0 +1,14 @@
+{
+  "id": "0c3dfcb2-9317-421c-8663-bbee3bf7be43",
+  "name": "Send email to liam.mcdermott89@gmail.com when submitted",
+  "form": "44219715-8a5a-41a5-b823-16e700751d2f",
+  "active": true,
+  "workflowTypeId": "e96badd7-05be-4978-b8d9-b3d733de70a5",
+  "executesOn": "Submitted",
+  "settings": {
+    "Email": "liam.mcdermott89@gmail.com",
+    "Subject": "the form TestingRUClear was submitted",
+    "Message": "the form TestingRUClear was submitted, this is the list of values it contained, you can turn this email off under workflows in Umbraco Contour"
+  },
+  "sortOrder": 0
+}
