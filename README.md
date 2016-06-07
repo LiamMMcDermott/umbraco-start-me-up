@@ -1,4 +1,4 @@
 # umbraco-start-me-up
-NB: Does not include the .sdf database that is required. To Spin this up:
+Starting point for Umbraco Site:
 1. Git clone
 2. Download password protected .sdf from DropBox/Umbraco/Umbraco.7z
