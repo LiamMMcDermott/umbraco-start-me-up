@@ -1,4 +1,13 @@
-window.onload = function() {
+var defaultLonLat;
+var getDefaultLonLat = $.getJSON("/Umbraco/Api/Locations/GetDefaultLocation", function () {
+
+}).done(function (data2) {
+    var parsed = JSON.parse(data2);
+    defaultLonLat = parsed;
+    $("#default").append("Default Location is: " + parsed.Name);
+});
+//TODO Change the NearestCity() default to the above default node and not hard coded LonLats
+window.onload = function () {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(UserLocation)
     } else NearestCity(53.408371, -2.991573)
@@ -13,7 +22,7 @@ function Deg2Rad(deg) {
 }
 
 function PythagorasEquirectangular(lat1, lon1, lat2, lon2) {
-    lat1 = Deg2Rad(lat1);
+    lat1 = Deg2Rad(lat1);   
     lat2 = Deg2Rad(lat2);
     lon1 = Deg2Rad(lon1);
     lon2 = Deg2Rad(lon2);
@@ -30,9 +39,9 @@ var getData = $.getJSON("/Umbraco/Api/Locations/GetLocations", function () {
   .done(function (data) {
       var parsed = JSON.parse(data);
       obj = parsed;
-      $.each(parsed, function (i, item) {          
-          $("#city").append(item.LatLon);
-      })
+      //$.each(parsed, function (i, item) {          
+          //$("#city").append(item.Name);
+      //})
   })
   .fail(function () {
       console.log("error");
