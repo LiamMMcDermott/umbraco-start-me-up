@@ -18,6 +18,9 @@ using MarkEmbling.PostcodesIO;
 
 namespace StartMeUp.App_Code
 {
+    /// <summary>
+    /// Custom Events associated with saving and deleting Job Posts.
+    /// </summary>
     public class CustomEventHandler : ApplicationEventHandler
     {
         protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
@@ -27,6 +30,11 @@ namespace StartMeUp.App_Code
             ContentService.Deleted += ContentService_Deleted;
         }
 
+        /// <summary>
+        /// Contents the service_ saving.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="SaveEventArgs{IContent}"/> instance containing the event data.</param>
         private void ContentService_Saving(IContentService sender, SaveEventArgs<IContent> e)
         {
             foreach (var content in e.SavedEntities.Where(c => c.ContentType.Alias.Equals("BlogPost")))
